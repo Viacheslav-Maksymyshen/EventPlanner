@@ -1,0 +1,10 @@
+{
+  "header.logo": "Логотип",
+  "header.searchPlaceholder": "Знайти подію за назвою чи описом...",
+  "button.createEvent": "Створити подію",
+  "button.goBack": "Повернутися назад",
+
+  "language.en": "EN",
+  "language.ua": "UA",
+  "header.languageSelector": "UA"
+}

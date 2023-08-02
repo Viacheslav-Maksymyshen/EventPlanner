@@ -1,0 +1,10 @@
+{
+  "header.logo": "Logo",
+  "header.searchPlaceholder": "Search for an event by title or description...",
+  "button.createEvent": "Create Event",
+  "button.goBack": "Go Back",
+
+  "language.en": "EN",
+  "language.ua": "UA",
+  "header.languageSelector": "EN"
+}
