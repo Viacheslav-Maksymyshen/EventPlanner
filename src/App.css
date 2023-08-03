@@ -36,3 +36,6 @@
     transform: rotate(360deg);
   }
 }
+.EventCard:hover > button {
+  opacity: 1;
+}
