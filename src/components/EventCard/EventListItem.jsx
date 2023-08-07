@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Box,
   Heading,
   Text,
   Button,
@@ -46,16 +45,15 @@ const EventListItem = ({ event }) => {
       <CardHeader
         display="flex"
         alignItems="flex-start"
-        gap="8px"
-        borderRadius="8px"
-        padding="4px"
+        gap="12px"
+        padding="12px"
       >
         <span
           style={{
             display: "flex",
             alignItems: "center",
-            padding: "4px 8px",
-            borderRadius: "4px",
+            padding: "6px 12px",
+            borderRadius: "8px",
             background: "#FFF",
             color: "#7B61FF",
             fontSize: "14px",
@@ -68,8 +66,8 @@ const EventListItem = ({ event }) => {
           style={{
             display: "flex",
             alignItems: "center",
-            padding: "4px 8px",
-            borderRadius: "4px",
+            padding: "6px 12px",
+            borderRadius: "8px",
             background: "#FFF",
             color:
               event.priority === "High"
@@ -131,6 +129,7 @@ const EventListItem = ({ event }) => {
           minHeight: "auto",
           alignSelf: "stretch",
           overflow: "hidden",
+          borderRadius: "0px 0px 10px 10px",
         }}
       >
         <Heading

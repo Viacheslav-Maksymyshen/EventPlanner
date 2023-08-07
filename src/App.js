@@ -25,6 +25,9 @@ const App = () => {
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
+  const handleSearchClear = () => {
+    setSearchQuery(""); // Очищаємо значення інпуту
+  };
 
   const filteredEvents = eventsData.filter(
     (event) =>
@@ -55,10 +58,23 @@ const App = () => {
           p="4"
           borderBottom="1px solid #ddd"
         >
-          <Heading as="h1" size="lg">
+          <Heading
+            style={{
+              color: "#7B61FF",
+              fontFamily: "Alata",
+              fontSize: "24px",
+              fontStyle: "normal",
+              fontWeight: "400",
+              lineHeight: "normal",
+            }}
+          >
             {t("header.logo")}
           </Heading>
-          <SearchBar value={searchQuery} onChange={handleSearchChange} />
+          <SearchBar
+            value={searchQuery}
+            onChange={handleSearchChange}
+            onClear={handleSearchClear}
+          />
           <Menu>
             <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
               {t("header.languageSelector")}
