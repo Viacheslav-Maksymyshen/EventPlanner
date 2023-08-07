@@ -1,3 +1,4 @@
+// src/App.js
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
@@ -15,16 +16,23 @@ import { useTranslation } from "react-i18next";
 import HomePage from "./pages/HomePage";
 import CreateEventPage from "./pages/CreateEventPage";
 import EventPage from "./pages/EventPage";
-import SearchBar from "./components/SearchBar";
 import eventsData from "./data/eventsData";
+import SearchBar from "./components/SearchBar";
 
 const App = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const { t, i18n } = useTranslation();
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
+
+  const filteredEvents = eventsData.filter(
+    (event) =>
+      event.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      event.description.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const { t, i18n } = useTranslation();
 
   const handleLanguageChange = (selectedLanguage) => {
     i18n.changeLanguage(selectedLanguage);
@@ -38,16 +46,9 @@ const App = () => {
     }
   }, [i18n]);
 
-  const filteredEvents = eventsData.filter(
-    (event) =>
-      event.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      event.description.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-
   return (
     <Router>
       <Box>
-        {/* header */}
         <Flex
           alignItems="center"
           justifyContent="space-between"
@@ -59,11 +60,7 @@ const App = () => {
           </Heading>
           <SearchBar value={searchQuery} onChange={handleSearchChange} />
           <Menu>
-            <MenuButton
-              as={Button}
-              rightIcon={<ChevronDownIcon />}
-              onClick={() => {}}
-            >
+            <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
               {t("header.languageSelector")}
             </MenuButton>
             <MenuList>
@@ -76,7 +73,6 @@ const App = () => {
             </MenuList>
           </Menu>
         </Flex>
-        {/* content */}
         <Box p="4">
           <Routes>
             <Route path="/" element={<HomePage events={filteredEvents} />} />
