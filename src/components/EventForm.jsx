@@ -6,6 +6,12 @@ import {
   Input,
   Textarea,
   Button,
+  AlertDialog,
+  AlertDialogOverlay,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogBody,
+  AlertDialogFooter,
 } from "@chakra-ui/react";
 
 const EventForm = () => {
@@ -17,18 +23,31 @@ const EventForm = () => {
     location: "",
     description: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isAlertOpen, setIsAlertOpen] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Тут ви можете надіслати дані форми на сервер або зберегти їх у стані додатку
-    // Наприклад, можна вивести їх на сторінці події
+    setIsSubmitting(true);
+
+    // Тут надіслати дані форми на сервер або зберегти їх у стані додатку
+
     console.log(formData);
-    navigate(`/event/${Math.floor(Math.random() * 100)}`); // Перенаправити на сторінку події з випадковим ID (додати свій логічний генерацію ID)
+    await new Promise((resolve) => setTimeout(resolve, 1000)); //  імітація запиту
+
+    setIsSubmitting(false);
+    setIsAlertOpen(true);
+  };
+
+  const closeAlert = () => {
+    setIsAlertOpen(false);
+    // navigate(`/event/${Math.floor(Math.random() * 100)}`);
+    navigate(`/`);
   };
 
   return (
@@ -77,9 +96,23 @@ const EventForm = () => {
           onChange={handleChange}
         />
       </FormControl>
-      <Button type="submit" colorScheme="blue">
+      <Button type="submit" colorScheme="blue" isLoading={isSubmitting}>
         Створити подію
       </Button>
+      <AlertDialog isOpen={isAlertOpen} onClose={closeAlert} isCentered>
+        <AlertDialogOverlay />
+        <AlertDialogContent>
+          <AlertDialogHeader>Повідомлення</AlertDialogHeader>
+          <AlertDialogBody>
+            Вибачте, але дана сторінка в розробці.
+          </AlertDialogBody>
+          <AlertDialogFooter>
+            <Button colorScheme="blue" onClick={closeAlert}>
+              Закрити
+            </Button>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </form>
   );
 };
