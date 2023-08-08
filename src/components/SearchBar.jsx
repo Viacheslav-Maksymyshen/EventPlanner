@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Input,
   InputGroup,
@@ -7,17 +7,16 @@ import {
   IconButton,
 } from "@chakra-ui/react";
 import { SearchIcon, CloseIcon } from "@chakra-ui/icons";
-import { useTranslation } from "react-i18next"; // Імпортуємо useTranslation
+import { useTranslation } from "react-i18next";
 
 const SearchBar = ({ value, onChange, onClear }) => {
-  const { t } = useTranslation(); // Використовуємо useTranslation для отримання перекладів
+  const { t } = useTranslation();
 
   return (
     <InputGroup
       style={{
         display: "flex",
         width: "410px",
-        height: "48px",
         justifyContent: "center",
         alignItems: "center",
         flexShrink: 0,
@@ -25,19 +24,20 @@ const SearchBar = ({ value, onChange, onClear }) => {
         borderRadius: "8px",
       }}
     >
-      <InputLeftElement pointerEvents="none">
+      <InputLeftElement pointerEvents="none" height="48px">
         <SearchIcon color={value ? "blue.500" : "gray.300"} />
       </InputLeftElement>
       <Input
         _focus={{ outline: "none", border: "none", boxShadow: "none" }}
         border="none"
         type="text"
-        placeholder={t("header.searchPlaceholder")} // Використовуємо переклад для плейсхолдера
+        placeholder={t("header.searchPlaceholder")}
         value={value}
         onChange={onChange}
+        height="48px"
       />
-      {value && ( // Відображаємо хрестик тільки якщо є значення в інпуті
-        <InputRightElement>
+      {value && (
+        <InputRightElement height="48px">
           <IconButton
             aria-label="Clear search"
             icon={<CloseIcon color={value ? "blue.500" : "gray.300"} />}

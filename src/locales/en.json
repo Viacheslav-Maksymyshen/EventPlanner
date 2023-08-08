@@ -2,7 +2,10 @@
   "header.logo": "Event Planner",
   "header.searchPlaceholder": "Search for an event by title or description...",
   "button.createEvent": "Create Event",
-  "button.goBack": "Go Back",
+  "button.goBack": "Back",
+  "button.moreInfo": "More info",
+  "button.deleteEvent": "Delete event",
+  "button.deleting": "Deleting...",
 
   "language.en": "EN",
   "language.ua": "UA",

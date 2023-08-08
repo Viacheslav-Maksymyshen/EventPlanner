@@ -2,7 +2,10 @@
   "header.logo": "Організатор заходів",
   "header.searchPlaceholder": "Знайти подію за назвою чи описом...",
   "button.createEvent": "Створити подію",
-  "button.goBack": "Повернутися назад",
+  "button.goBack": "Назад",
+  "button.moreInfo": "Більше інформації",
+  "button.deleteEvent": "Видалити подію",
+  "button.deleting": "Видалення...",
 
   "language.en": "EN",
   "language.ua": "UA",

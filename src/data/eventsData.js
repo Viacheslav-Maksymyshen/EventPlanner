@@ -26,7 +26,7 @@ const eventsData = [
   {
     id: 3,
     title: "Business Seminar 'Strategies for Success'",
-    date: "2023-08-03",
+    date: "2023-08-01",
     time: "10:00",
     location: "London",
     description:

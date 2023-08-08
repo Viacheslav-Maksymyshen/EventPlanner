@@ -10,6 +10,9 @@ import {
   CardFooter,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
+import { format } from "date-fns";
 
 const EventListItem = ({ event }) => {
   const [isHovered, setIsHovered] = React.useState(false);
@@ -21,6 +24,9 @@ const EventListItem = ({ event }) => {
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
+
+  const { t } = useTranslation();
+  const formattedDate = format(new Date(event.date), "dd.MM");
 
   return (
     <Card
@@ -114,7 +120,7 @@ const EventListItem = ({ event }) => {
             }}
           >
             <span>
-              {event.date} at {event.time}
+              {formattedDate} at {event.time}
             </span>
             <span>{event.location}</span>
           </div>
@@ -175,7 +181,7 @@ const EventListItem = ({ event }) => {
               borderRadius="8px"
               background="#7B61FF"
             >
-              More info
+              {t("button.moreInfo")}
             </Button>
           </ChakraLink>
         )}
