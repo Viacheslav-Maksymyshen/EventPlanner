@@ -8,16 +8,19 @@ import reportWebVitals from "./reportWebVitals";
 import theme from "./utils/extendTheme";
 import { ChakraProvider } from "@chakra-ui/react";
 import { EventsDataProvider } from "./components/EventsDataContext";
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <I18nextProvider i18n={i18n}>
     <React.StrictMode>
-      <ChakraProvider theme={theme}>
-        <EventsDataProvider>
-          <App />
-        </EventsDataProvider>
-      </ChakraProvider>
+      <BrowserRouter basename="/EventPlanner">
+        <ChakraProvider theme={theme}>
+          <EventsDataProvider>
+            <App />
+          </EventsDataProvider>
+        </ChakraProvider>
+      </BrowserRouter>
     </React.StrictMode>
   </I18nextProvider>
 );
