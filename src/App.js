@@ -138,7 +138,7 @@ const App = () => {
         <Box p="4">
           <Routes>
             <Route
-              path="/"
+              path="/EventPlanner"
               element={
                 <HomePage
                   events={filteredEvents}
@@ -150,8 +150,14 @@ const App = () => {
                 />
               }
             />
-            <Route path="/create-event" element={<CreateEventPage />} />
-            <Route path="/event/:eventId" element={<EventPage />} />
+            <Route
+              path="/EventPlanner/create-event"
+              element={<CreateEventPage />}
+            />
+            <Route
+              path="/EventPlanner/event/:eventId"
+              element={<EventPage />}
+            />
           </Routes>
         </Box>
       </Box>
