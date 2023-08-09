@@ -36,7 +36,7 @@ const EventPage = () => {
     setTimeout(() => {
       deleteEvent(event.id);
       setIsDeleting(false);
-      navigate("/");
+      navigate("/EventPlanner");
     }, 1500);
   };
 

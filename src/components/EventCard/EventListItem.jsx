@@ -161,7 +161,7 @@ const EventListItem = ({ event }) => {
         {isHovered && (
           <ChakraLink
             as={Link}
-            to={`/event/${event.id}`}
+            to={`/EventPlanner/event/${event.id}`}
             padding="8px 16px 16px 16px"
             alignSelf="flex-end"
             _hover={{ textDecoration: "none" }}

@@ -46,8 +46,8 @@ const EventForm = () => {
 
   const closeAlert = () => {
     setIsAlertOpen(false);
-    // navigate(`/event/${Math.floor(Math.random() * 100)}`);
-    navigate(`/`);
+    // navigate(`/EventPlanner/event/${Math.floor(Math.random() * 100)}`);
+    navigate(`/EventPlanner`);
   };
 
   return (

@@ -81,7 +81,7 @@ const HomePage = ({ selectedCategory, onSelectCategory, searchQuery }) => {
           <SortOptions setSortType={setSortType} />
         </Box>
         <Box>
-          <Link to="/create-event">
+          <Link to="/EventPlanner/create-event">
             <Button
               style={{
                 ...createButtonStyles,
