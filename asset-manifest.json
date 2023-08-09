@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/EventPlanner/static/css/main.d122b531.css",
+    "main.js": "/EventPlanner/static/js/main.10081f06.js",
+    "static/js/787.1f24024d.chunk.js": "/EventPlanner/static/js/787.1f24024d.chunk.js",
+    "static/media/Conference.jpg": "/EventPlanner/static/media/Conference.b538f8e44f5d3be918e6.jpg",
+    "static/media/Music.jpg": "/EventPlanner/static/media/Music.466aa2c4905d8da51fd3.jpg",
+    "static/media/Sport.jpg": "/EventPlanner/static/media/Sport.9fc86d53e62e94e1f2c1.jpg",
+    "static/media/Party.jpg": "/EventPlanner/static/media/Party.9b7f24b7c513d6eb653b.jpg",
+    "static/media/Workshop_2.jpg": "/EventPlanner/static/media/Workshop_2.79514441422c789c3cf0.jpg",
+    "static/media/Business.jpg": "/EventPlanner/static/media/Business.763cad11872d1a6e1378.jpg",
+    "static/media/Art.jpg": "/EventPlanner/static/media/Art.778383eb0ba57f03ccca.jpg",
+    "static/media/Workshop.jpg": "/EventPlanner/static/media/Workshop.32ece5986f504b0b6393.jpg",
+    "index.html": "/EventPlanner/index.html",
+    "main.d122b531.css.map": "/EventPlanner/static/css/main.d122b531.css.map",
+    "main.10081f06.js.map": "/EventPlanner/static/js/main.10081f06.js.map",
+    "787.1f24024d.chunk.js.map": "/EventPlanner/static/js/787.1f24024d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d122b531.css",
+    "static/js/main.10081f06.js"
+  ]
+}
